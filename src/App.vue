@@ -1,6 +1,21 @@
 <template>
   <div id="app">
-    <div ref="lottieContainer"></div>
+    <div style="height: 500px; overflow: hidden;">
+      <div
+        ref="lottieContainer"
+      />
+      <div class="mask">
+        <svg
+          viewBox="0 0 500 150"
+          preserveAspectRatio="none"
+          style="height: 100%; width: 100%;"
+        ><path
+          d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
+          style="stroke: none; fill: #FFF;"
+        /></svg>
+      </div>
+    </div>
+   
     <Subtitle1 text="Recent Activity" />
     <Subtitle2 text="16 July 2019" />
     <SingleLine
@@ -25,7 +40,7 @@ import animation from "./instruction/animation.json";
 import lottie from "lottie-web";
 
 export default {
-  name: "app",
+  name: "App",
   data: function() {
     return {
       dataSet1: [
@@ -94,4 +109,29 @@ export default {
   width: 100%;
   height: 100%;
 }
+
+.mask{
+  position: absolute;
+  top: 200px;
+  left: 0;
+  width: 100%
+}
+
+/* .wave {
+  position: relative;
+  background: linear-gradient(90deg,#f0027f,#75489f);
+  min-height: 600px;
+}
+
+.wave:before{
+  content:'';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 150px;
+  background: url('./assets/wave.png');
+  background-size: cover
+} */
+
 </style>

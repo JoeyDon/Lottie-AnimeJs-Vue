@@ -2,9 +2,9 @@
   <div class="line">
     <h5>
       {{ data.text }}
-      <span>{{ data.rewards}}</span>
+      <span>{{ data.rewards }}</span>
     </h5>
-    <hr v-if="data.divider" />
+    <hr v-if="data.divider">
   </div>
 </template>
 
