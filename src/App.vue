@@ -1,21 +1,18 @@
 <template>
   <div id="app">
-    <div style="height: 500px; overflow: hidden;">
-      <div
-        ref="lottieContainer"
-      />
+    <div style="height: 400px; overflow: hidden;">
+      <div ref="lottieContainer" />
       <div class="mask">
-        <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          style="height: 100%; width: 100%;"
-        ><path
-          d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
-          style="stroke: none; fill: #FFF;"
-        /></svg>
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+          <path
+            d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
+            style="stroke: none; fill: #FFF;"
+          />
+        </svg>
       </div>
     </div>
-   
+    <Subtitle1 text="Lorem ipsum dolor" />
+    <RoundInfo :data="dataCircle1" />
     <Subtitle1 text="Recent Activity" />
     <Subtitle2 text="16 July 2019" />
     <SingleLine
@@ -33,9 +30,11 @@
 </template>
 
 <script>
+import RoundInfo from "./components/RoundInfo";
 import SingleLine from "./components/SingleLine";
 import Subtitle1 from "./components/Subtitle1";
 import Subtitle2 from "./components/Subtitle2";
+
 import animation from "./instruction/animation.json";
 import lottie from "lottie-web";
 
@@ -74,7 +73,11 @@ export default {
           text: "You received a donation",
           rewards: "$20"
         }
-      ]
+      ],
+      dataCircle1: {
+        text: "YOUR FIRST WALK",
+        scores: 230
+      }
     };
   },
   components: {
@@ -110,11 +113,11 @@ export default {
   height: 100%;
 }
 
-.mask{
+.mask {
   position: absolute;
-  top: 200px;
+  top: 260px;
   left: 0;
-  width: 100%
+  width: 100%;
 }
 
 /* .wave {
@@ -133,5 +136,4 @@ export default {
   background: url('./assets/wave.png');
   background-size: cover
 } */
-
 </style>

@@ -1,25 +1,26 @@
 <template>
-  <div class="line">{{ text }}</div>
+  <div class="line">{{ data.text }}</div>
 </template>
 
 <script>
 export default {
   props: {
-    text: String
+    data: Object
   }
 };
 </script>
 
 <style scoped>
 .line {
-  height: 20px;
+  height: 18px;
   color: #1d1d1b;
   font-family: "Pedigree-UltraBold";
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 18px;
   text-align: center;
-  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 </style>
 

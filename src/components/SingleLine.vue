@@ -1,10 +1,9 @@
 <template>
   <div class="line">
-    <h5>
-      {{ data.text }}
-      <span>{{ data.rewards }}</span>
-    </h5>
-    <hr v-if="data.divider">
+    <img id="icon" src="../assets/icon.png" />
+    <span id="text">{{ data.text }}</span>
+    <span id="rewards">{{ data.rewards }}</span>
+    <hr v-if="data.divider" />
   </div>
 </template>
 
@@ -18,20 +17,38 @@ export default {
 
 <style scoped>
 .line {
-  margin: auto;
+  line-height: 40px;
   width: 80%;
-}
-.line h5 {
-  position: relative;
-}
-.line h5 span {
-  position: absolute;
-  right: 0;
+  margin: auto;
 }
 
+#icon {
+  vertical-align: middle;
+}
+
+#text {
+  color: #1d1d1b;
+  font-family: Muli;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 17px;
+  padding-left: 10px;
+}
+
+#rewards {
+  color: #1d1d1b;
+  font-family: "Pedigree-UltraBold";
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+
+  float: right;
+}
 hr {
   background-color: #e5e9f5;
   height: 1px;
   border: 0;
+  margin: 0;
+  /*  default margin 8 */
 }
 </style>

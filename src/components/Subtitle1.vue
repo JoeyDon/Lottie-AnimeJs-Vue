@@ -12,12 +12,15 @@ export default {
 
 <style scoped>
 .line {
-  text-align: center;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  font-style: normal;
-  font-weight: bold;
+  height: 18px;
+  color: #1d1d1b;
+  font-family: "Pedigree-UltraBold";
   font-size: 16px;
+  font-weight: 400;
+  line-height: 18px;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 </style>
 
