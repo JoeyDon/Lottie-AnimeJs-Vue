@@ -1,5 +1,7 @@
 <template>
-  <div class="line">{{ text }}</div>
+  <div class="lineSubtitle2">
+    {{ text }}
+  </div>
 </template>
 
 <script>
@@ -11,15 +13,6 @@ export default {
 </script>
 
 <style scoped>
-.line {
-  height: 20px;
-  color: #1d1d1b;
-  font-family: "Pedigree-UltraBold";
-  font-size: 12px;
-  font-weight: 400;
-  line-height: 20px;
-  text-align: center;
-  letter-spacing: 1.5px;
-}
+
 </style>
 
