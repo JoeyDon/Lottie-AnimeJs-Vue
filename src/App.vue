@@ -86,7 +86,8 @@ export default {
   components: {
     SingleLine,
     Subtitle1,
-    Subtitle2
+    Subtitle2,
+    RoundInfo
   },
   mounted() {
     this.anim = lottie.loadAnimation({

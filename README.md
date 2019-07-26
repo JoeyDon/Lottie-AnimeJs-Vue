@@ -40,3 +40,11 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 2. Can't manipulate size, so install module lottie-web
    rendererSettings: { viewBoxSize: "700 0 2400 590" }
+
+3. Svg overlap solution
+
+4. Vue components and render data by v-for
+
+5. Apply SASS
+
+6. Find solution Anime.js
