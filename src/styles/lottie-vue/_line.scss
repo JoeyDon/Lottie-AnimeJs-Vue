@@ -1,38 +1,38 @@
 .singleLine {
-    line-height: 40px;
-    width: 80%;
-    margin: auto;
+  line-height: 40px;
+  width: 80%;
+  margin: auto;
 
-    .icon {
-        vertical-align: middle;
-    }
+  .icon {
+    vertical-align: middle;
+  }
 
-    .text {
-        color: #1d1d1b;
-        font-family: Muli;
-        font-size: 14px;
-        font-weight: 300;
-        line-height: 17px;
-        padding-left: 10px;
-    }
+  .text {
+    color: #1d1d1b;
+    font-family: Muli;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 17px;
+    padding-left: 10px;
+  }
 
-    .rewards {
-        color: #1d1d1b;
-        font-family: "Pedigree-UltraBold";
-        font-size: 12px;
-        font-weight: 400;
-        letter-spacing: 1.5px;
+  .rewards {
+    color: #1d1d1b;
+    font-family: "Pedigree-UltraBold";
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1.5px;
 
-        float: right;
-    }
+    float: right;
+  }
 
-    hr {
-        background-color: #e5e9f5;
-        height: 1px;
-        border: 0;
-        margin: 0;
-        /*  default margin 8 */
-    }
+  hr {
+    background-color: #e5e9f5;
+    height: 1px;
+    border: 0;
+    margin: 0;
+    /*  default margin 8 */
+  }
 }
 
 .lineSubtitle1 {
@@ -56,4 +56,22 @@
   line-height: 20px;
   text-align: center;
   letter-spacing: 1.5px;
+}
+
+.circleContainer {
+  width: 80%;
+  line-height: 68px;
+  border-radius: 44px;
+  border: solid 0.5px #e9e9e9;
+  background: #f4f4f4;
+  margin: auto;
+  .imgContainer {
+    width: 20%;
+    .icon {
+      vertical-align: middle;
+    }
+  }
+  .barContainer {
+    width: 80%;
+  }
 }
