@@ -47,4 +47,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 
 5. Apply SASS
 
-6. Find solution Anime.js
+6. Find solution Anime.js / CSS / pure js
+
+Things I learnt:
+
+1. sequence in importing SASS
+2. Animation by document get ID (unique gives prob), documentgetclass return a collection, pass index as props not smart. Solved by Vue \$ ref to locate the child node in DOM
+
+What I amended:
+
+1. number in the circle container

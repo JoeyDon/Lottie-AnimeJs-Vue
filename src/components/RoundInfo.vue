@@ -1,68 +1,140 @@
 <template>
   <div>
     <div class="grid-container">
-      <div class="item1">YOUR FIRST WALK</div>
+      <div class="item1">{{data.text}}</div>
       <div class="item2">
-        <img class="icon" src="../assets/icon@2x.png" />
+        <img class="icon2x" ref="icon2x" src="../assets/icon@2x.png" />
       </div>
-      <div class="item3">Main</div>
-      <div class="item4">Footer</div>
+      <div class="item3">
+        <div class="progressContainer">
+          <div class="progress" ref="progress"></div>
+          <div class="progressBonus" ref="progressBonus"></div>
+        </div>
+      </div>
+      <div class="item4">
+        <!-- <span class="figure" ref="figure">+{{data.scores + data.bonus}}</span> -->
+        +
+        <span class="figure" ref="figure">0</span>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-//import anime from 'animejs/lib/anime.es.js';
+import anime from "animejs/lib/anime.es.js";
 
 export default {
   props: {
     data: Object
   },
+  data: function() {
+    return {
+      // Vinilla bar animation
+      MAX_SCORE: 400,
+      initialStoppedAt: 0
+    };
+  },
   mounted() {
-    // anime({
-    //   targets: '.line',
-    //   width: '100%', // -> from '28px' to '100%',
-    //   easing: 'easeInOutQuad',
-    //   direction: 'alternate',
-    //   loop:true
-    // });
+    var timeLine = anime.timeline({
+      easing: "easeInOutExpo",
+      duration: 1300
+    });
+
+    timeLine
+      .add({
+        targets: this.$refs.figure,
+        innerHTML: [0, this.data.scores],
+        round: 1,
+        delay: 500
+      })
+
+      .add({
+        targets: this.$refs.figure,
+        innerHTML: [this.data.scores, this.data.scores + this.data.bonus],
+        round: 1,
+        delay: 100
+      });
+
+    // shake
+    const xMax = this.data.bonus;
+    anime({
+      targets: this.$refs.icon2x,
+      easing: "linear",
+      delay: 2000,
+      duration: 600,
+      translateX: [
+        {
+          value: (xMax / 2) * -1
+        },
+        {
+          value: xMax / 2
+        },
+        {
+          value: xMax / -4
+        },
+        {
+          value: xMax / 4
+        },
+        {
+          value: 0
+        }
+      ]
+    });
+
+    setTimeout(() => {
+      this.move("Initial");
+    }, 700);
+
+    setTimeout(() => {
+      this.move("Bonus");
+    }, 2200);
+  },
+  methods: {
+    move(type) {
+      if (type === "Initial") {
+        //var elem = document.getElementsByClassName("progress");
+        var elem = this.$refs.progress;
+        var width = 1;
+        var runAnimation = setInterval(animation, 10);
+        var stopAt = (this.data.scores / this.MAX_SCORE) * 100;
+        this.initialStoppedAt = stopAt;
+      }
+      if (type === "Bonus") {
+        //var elem = document.getElementsByClassName("progressBonus");
+        var elem = this.$refs.progressBonus;
+        var width = this.initialStoppedAt;
+        var runAnimation = setInterval(animation, 10);
+        var stopAt =
+          ((this.data.scores + this.data.bonus) / this.MAX_SCORE) * 100;
+      }
+
+      function animation() {
+        if (width >= stopAt) {
+          clearInterval(runAnimation);
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }
+    },
+
+    bonusMove() {
+      var elem = document.getElementById("progress2");
+      var width = 20;
+      var id = setInterval(frame, 10);
+
+      function frame() {
+        if (width >= 80) {
+          clearInterval(id);
+        } else {
+          width++;
+          elem.style.width = width + "%";
+        }
+      }
+    }
   }
 };
 </script>
 
 <style>
-.item1 {
-  grid-area: header;
-}
-.item2 {
-  grid-area: icon;
-}
-.item3 {
-  grid-area: main;
-}
-.item4 {
-  grid-area: footer;
-}
-
-.grid-container {
-  grid-template-columns: 50px;
-  border-radius: 44px;
-  display: grid;
-  grid-template-areas:
-    "icon header header header header header"
-    "icon main main main main main"
-    "icon footer footer footer footer footer";
-  grid-gap: 2px;
-  background-color: #2196f3;
-  padding: 10px;
-}
-
-.grid-container > div {
-  background-color: rgba(255, 255, 255, 0.8);
-  font-size: 10px;
-}
-
-.grid-container > .item4 {
-  text-align: right;
-}
 </style>

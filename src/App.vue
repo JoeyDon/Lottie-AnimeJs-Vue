@@ -3,11 +3,7 @@
     <div class="svgContainer">
       <div ref="lottieContainer" />
       <div class="svgMask">
-        <svg
-          viewBox="0 0 500 150"
-          preserveAspectRatio="none"
-          style="height: 100%; width: 100%;"
-        >
+        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
           <path
             d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
             style="stroke: none; fill: #FFF;"
@@ -16,19 +12,19 @@
       </div>
     </div>
     <Subtitle1 text="Lorem ipsum dolor" />
-    <RoundInfo :data="dataCircle1" />
+    <RoundInfo v-for="(item,index) in dataSet1" :key="item.id" :data="dataSet1[index]" />
     <Subtitle1 text="Recent Activity" />
     <Subtitle2 text="16 July 2019" />
     <SingleLine
-      v-for="(item,index) in dataSet1"
-      :data="{...dataSet1[index], divider: isLastElement(index,dataSet1.length)}"
-      :key="index"
+      v-for="(item,index) in dataSet2"
+      :data="{...dataSet2[index], divider: isLastElement(index,dataSet2.length)}"
+      :key="item.id"
     />
     <Subtitle2 text="15 July 2019" />
     <SingleLine
-      v-for="(item,index) in dataSet2"
-      :data="{...dataSet2[index], divider: isLastElement(index,dataSet2.length)}"
-      :key="index"
+      v-for="(item,index) in dataSet3"
+      :data="{...dataSet3[index], divider: isLastElement(index,dataSet3.length)}"
+      :key="item.id"
     />
   </div>
 </template>
@@ -47,40 +43,57 @@ export default {
     return {
       dataSet1: [
         {
-          text: "You received gift!",
-          rewards: "$10"
+          id: 0,
+          text: "YOUR FIRST WALK",
+          scores: 230,
+          bonus: 0
         },
         {
-          text: "You went for walkies",
-          rewards: "250pts"
+          id: 1,
+          text: "WALK BONUS",
+          scores: 230,
+          bonus: 80
         }
       ],
       dataSet2: [
         {
+          id: 2,
+          text: "You received gift!",
+          rewards: "$10"
+        },
+        {
+          id: 3,
+          text: "You went for walkies",
+          rewards: "250pts"
+        }
+      ],
+      dataSet3: [
+        {
+          id: 4,
           text: "You went for walkies",
           rewards: "100pts"
         },
         {
+          id: 5,
           text: "You went for walkies",
           rewards: "50pts"
         },
         {
+          id: 6,
           text: "You received a donation",
           rewards: "$15"
         },
         {
+          id: 7,
           text: "You went for walkies",
           rewards: "50pts"
         },
         {
+          id: 8,
           text: "You received a donation",
           rewards: "$20"
         }
-      ],
-      dataCircle1: {
-        text: "YOUR FIRST WALK",
-        scores: 230
-      }
+      ]
     };
   },
   components: {
@@ -112,9 +125,5 @@ export default {
 </script>
 
 <style lang="scss">
-@import '@/styles/index.scss';
-
-
-
-
+@import "@/styles/index.scss";
 </style>

@@ -1,0 +1,90 @@
+.item1 {
+  grid-area: header;
+}
+.item2 {
+  grid-area: icon;
+}
+.item3 {
+  grid-area: main;
+}
+.item4 {
+  grid-area: footer;
+}
+
+.grid-container {
+  margin: auto;
+  width: 80%;
+  height: 68px;
+  grid-template-columns: 50px;
+  //padding: 5px 40px 5px 10px;
+
+  border-radius: 44px;
+  display: grid;
+  grid-template-areas:
+    "icon header header header header header"
+    "icon main main main main main"
+    "icon footer footer footer footer footer";
+  grid-gap: 2px;
+  background-color: #f4f4f4;
+
+  div {
+    //font-size: 8px;
+    //background-color: palevioletred;
+  }
+  .item1 {
+    grid-area: header;
+    color: #1d1d1b;
+    font-family: "Pedigree-UltraBold";
+    font-size: 12px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+  .item2 {
+    grid-area: icon;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    
+  }
+  .item3 {
+    grid-area: main;
+    padding-left: 20px;
+    font-size: 4px;
+
+    .progressContainer {
+      width: 200px;
+      border-radius: 5px;
+      background-color: white;
+      -webkit-clip-path: polygon(
+        polygon(1% 55%, 2% 50%, 100% 0, 100% 100%, 0% 100%)
+      );
+      clip-path: polygon(1% 55%, 2% 50%, 100% 0, 100% 100%, 0% 100%);
+      .progress {
+        background-color: $primary;
+        border-bottom-left-radius: 5px;
+        height: 14px;
+        width: 0;
+        float: left;
+      }
+      .progressBonus {
+        background-color: #ff6969;
+        border-bottom-left-radius: 5px;
+        height: 14px;
+        width: 0;
+      }
+    }
+  }
+  .item4 {
+    grid-area: footer;
+    text-align: right;
+    font-family: "Pedigree-UltraBold";
+    font-weight: 400;
+    letter-spacing: 0.136px;
+    font-size: 6px;
+    padding-right: 40px;
+  }
+}
