@@ -1,0 +1,55 @@
+{
+  "dataSet1": [
+    {
+      "id": 0,
+      "text": "YOUR FIRST WALK",
+      "scores": 230,
+      "bonus": 0
+    },
+    {
+      "id": 1,
+      "text": "WALK BONUS",
+      "scores": 230,
+      "bonus": 80
+    }
+  ],
+  "dataSet2": [
+    {
+      "id": 2,
+      "text": "You received gift!",
+      "rewards": "$10"
+    },
+    {
+      "id": 3,
+      "text": "You went for walkies",
+      "rewards": "250pts"
+    }
+  ],
+  "dataSet3": [
+    {
+      "id": 4,
+      "text": "You went for walkies",
+      "rewards": "100pts"
+    },
+    {
+      "id": 5,
+      "text": "You went for walkies",
+      "rewards": "50pts"
+    },
+    {
+      "id": 6,
+      "text": "You received a donation",
+      "rewards": "$15"
+    },
+    {
+      "id": 7,
+      "text": "You went for walkies",
+      "rewards": "50pts"
+    },
+    {
+      "id": 8,
+      "text": "You received a donation",
+      "rewards": "$20"
+    }
+  ]
+}

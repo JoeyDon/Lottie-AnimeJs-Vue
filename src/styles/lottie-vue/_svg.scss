@@ -1,11 +1,51 @@
-.svgContainer{
-    height: 400px; 
-    overflow: hidden;
-}
+.svgContainer {
+  overflow: hidden;
+  @include respond(ipadProLandscape) {
+    height: 530px;
+  }
+  @include respond(ipadPro) {
+    height: 480px;
+  }
+  @include respond(ipad) {
+    height: 440px;
+  }
+  @include respond(iphone678p) {
+    height: 440px;
+  }
+  @include respond(iphone678x) {
+    height: 400px;
+  }
+  @include respond(galaxyS5) {
+    height: 370px;
+  }
+  @include respond(iphone5) {
+    height: 330px;
+  }
 
-.svgMask {
+  .svgMask {
     position: absolute;
-    top: 260px;
     left: 0;
     width: 100%;
+    @include respond(ipadProLandscape) {
+      top: 130px;
+    }
+    @include respond(ipadPro) {
+      top: 200px;
+    }
+    @include respond(ipad) {
+      top: 220px;
+    }
+    @include respond(iphone678p) {
+      top: 290px;
+    }
+    @include respond(iphone678x) {
+      top: 260px;
+    }
+    @include respond(galaxyS5) {
+      top: 250px;
+    }
+    @include respond(iphone5) {
+      top: 220px;
+    }
+  }
 }

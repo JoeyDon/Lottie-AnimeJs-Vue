@@ -1,16 +1,6 @@
 <template>
   <div id="app">
-    <div class="svgContainer">
-      <div ref="lottieContainer" />
-      <div class="svgMask">
-        <svg viewBox="0 0 500 150" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-          <path
-            d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
-            style="stroke: none; fill: #FFF;"
-          />
-        </svg>
-      </div>
-    </div>
+    <AnimiLogo />
     <Subtitle1 text="Lorem ipsum dolor" />
     <RoundInfo v-for="(item,index) in dataSet1" :key="item.id" :data="dataSet1[index]" />
     <Subtitle1 text="Recent Activity" />
@@ -30,13 +20,12 @@
 </template>
 
 <script>
+import AnimiLogo from "./components/AnimLogo";
 import RoundInfo from "./components/RoundInfo";
 import SingleLine from "./components/SingleLine";
 import Subtitle1 from "./components/Subtitle1";
 import Subtitle2 from "./components/Subtitle2";
-
-import animation from "./instruction/animation.json";
-import lottie from "lottie-web";
+import dataAPI from "./data.json";
 
 export default {
   data: function() {
@@ -97,20 +86,14 @@ export default {
     };
   },
   components: {
+    AnimiLogo,
     SingleLine,
     Subtitle1,
     Subtitle2,
     RoundInfo
   },
   mounted() {
-    this.anim = lottie.loadAnimation({
-      container: this.$refs.lottieContainer,
-      renderer: "svg",
-      loop: true,
-      autoplay: true,
-      animationData: animation,
-      rendererSettings: { viewBoxSize: "400 400 800 800" }
-    });
+    console.log(dataAPI);
   },
   methods: {
     isLastElement(index, arrLength) {
