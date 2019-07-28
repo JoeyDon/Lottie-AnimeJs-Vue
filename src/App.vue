@@ -25,65 +25,11 @@ import RoundInfo from "./components/RoundInfo";
 import SingleLine from "./components/SingleLine";
 import Subtitle1 from "./components/Subtitle1";
 import Subtitle2 from "./components/Subtitle2";
-import dataAPI from "./data.json";
+import dataFromAPI from "./data.json";
 
 export default {
   data: function() {
-    return {
-      dataSet1: [
-        {
-          id: 0,
-          text: "YOUR FIRST WALK",
-          scores: 230,
-          bonus: 0
-        },
-        {
-          id: 1,
-          text: "WALK BONUS",
-          scores: 230,
-          bonus: 80
-        }
-      ],
-      dataSet2: [
-        {
-          id: 2,
-          text: "You received gift!",
-          rewards: "$10"
-        },
-        {
-          id: 3,
-          text: "You went for walkies",
-          rewards: "250pts"
-        }
-      ],
-      dataSet3: [
-        {
-          id: 4,
-          text: "You went for walkies",
-          rewards: "100pts"
-        },
-        {
-          id: 5,
-          text: "You went for walkies",
-          rewards: "50pts"
-        },
-        {
-          id: 6,
-          text: "You received a donation",
-          rewards: "$15"
-        },
-        {
-          id: 7,
-          text: "You went for walkies",
-          rewards: "50pts"
-        },
-        {
-          id: 8,
-          text: "You received a donation",
-          rewards: "$20"
-        }
-      ]
-    };
+    return { ...dataFromAPI };
   },
   components: {
     AnimiLogo,
@@ -91,9 +37,6 @@ export default {
     Subtitle1,
     Subtitle2,
     RoundInfo
-  },
-  mounted() {
-    console.log(dataAPI);
   },
   methods: {
     isLastElement(index, arrLength) {
