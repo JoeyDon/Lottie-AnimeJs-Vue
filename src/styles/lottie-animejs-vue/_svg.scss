@@ -16,13 +16,13 @@
     height: 100vh;
   }
   @include respond(iphone678p) {
-    height: 440px;
+    height: 420px;
   }
   @include respond(iphone678x) {
-    height: 400px;
+    height: 380px;
   }
   @include respond(galaxyS5) {
-    height: 370px;
+    height: 360px;
   }
   @include respond(iphone5) {
     height: 300px;
