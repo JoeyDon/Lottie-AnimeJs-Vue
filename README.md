@@ -24,6 +24,10 @@ npm run serve
 ```
 npm run build
 ```
+
+## ⚠ Top Animated LOGO rendered only once, unless rotating the screen.
+For testing responsive purpose, you'll need to refresh the page after switching to another size of screen. But, you don't need to refresh the page if you rotate the screen (Portrait => Landscape, Landscape => Portrait)
+
 ## The Brief
 - UI Layout: Following `design.sketch` as a reference.
 - Tech Stack: Sass / Html5 / JavaScript
