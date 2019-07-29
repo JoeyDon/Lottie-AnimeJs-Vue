@@ -113,8 +113,30 @@ window.onorientationchange = () => {
 - [x] "First walk" and "Walk bonus" scoring bars should fill up in an animated way after the page is entirely loaded. Animation can be similar to what you can find as scoring animation when playing RPG games.
 
 
-## Bonus
+## Responsive Breakpoints
+Generally, I seperates into 3 groups :
 
-  
+```
+Group 1: Tablets (Both portrait and landscape)
 
-- Bonus points for considering accessibility, assets optimisation, and performances.
+Width range : 768px - 1366px
+
+Height range: Not being considered.
+```
+
+```
+Group 2: Mobile Phones (portrait only)
+
+Width range : 320px - 414px
+
+Height range: Not being considered.
+```
+```
+Group 3: Mobile Phones (landscape only)
+
+Width range : >568px (Iphone 5 landscape width 
+as the smallest among mobile phones)
+
+Height range: <414px (Iphone6/7/8 Plus landscape height 
+as the biggest among mobile phones)
+```
