@@ -32,42 +32,36 @@ npm run build
 
 ## My Road Map
  1. **SVG animation** by `lottie-web`.
-	1.1  I started with a swift way `<lottie-player/>` with `<script  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"/>`  But, it doesn't let user manipulate the **SVG ViewBox**. 
-	
-	1.2 Then, I had to install `lottie-web` with modifing parameter` rendererSettings` in `loadAnimation({...})` to play the SVG animation responsively.
+	\1.1  I started with a swift way `<lottie-player/>` with `<script  src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"/>`  But, it doesn't let user manipulate the **SVG ViewBox**. 
+	\1.2 Then, I had to install `lottie-web` with modifing parameter` rendererSettings` in `loadAnimation({...})` to play the SVG animation responsively.
 
 2. A **mask** on the animation.
-	2.1 I simply overlaid a transparent `wave.png` on the animated SVG, using CSS to keep it relative to the animated SVG.
-	
-	2.2 The alternative way can be clip-path in CSS.
+	\2.1 I simply overlaid a transparent `wave.png` on the animated SVG, using CSS to keep it relative to the animated SVG.
+	\2.2 The alternative way can be clip-path in CSS.
 
 3. Vue **dynamically** renders data.
-	3.1 `./src/dataAPI/data.json` contains all the data in the page.
-	
-	3.2 Different components with passing props, and list rendering (v-for) both are efficiently implemented.
+	\3.1 `./src/dataAPI/data.json` contains all the data in the page.
+	\3.2 Different components with passing props, and list rendering (v-for) both are efficiently implemented.
 
 4. Polish **Sass** and implement **responsive** breakpoints.
-	4.1 Define `$breakpoint` in `_mixin.scss` .
-	
-	4.2 `@include` the mixin to define the SVG height and Mask position in `_svg.scss` 
+	\4.1 Define `$breakpoint` in `_mixin.scss` .
+	\4.2 `@include` the mixin to define the SVG height and Mask position in `_svg.scss` 
 
 5. Hesitate between:  **Anime.js / CSS / VanillaJs** for **scores animation**
-	5.1 For the bar fiiling animation: I used 2 `setTimeout()` to control the timeline of base scores(yellow) and extra scores(red). Then, I used `setInterval((),30)` to quickly add the width percentage in CSS until it reach the right scores `clearInterval()`. 
+	\5.1 For the bar fiiling animation: I used 2 `setTimeout()` to control the timeline of base scores(yellow) and extra scores(red). Then, I used `setInterval((),30)` to quickly add the width percentage in CSS until it reach the right scores `clearInterval()`. 
+	\**The reason of using plain JavaScript is I misunderstood one `setTimeout() and setInterval()` question in the interview. So, I really want to show that I do understand how to use those.**
+	\In the real-world application I will use **Anime.js** for a better timeline control with other effects.
 	
-	**The reason of using plain JavaScript is I misunderstood one `setTimeout() and setInterval()` question in the interview. So, I really want to show that I do understand how to use those.**
-	
-	In the real-world application I will use **Anime.js** for a better timeline control with other effects.
-	
-	5.2 Animation of **numbers going up**.
+	\5.2 Animation of **numbers going up**.
 	I used `anime.timeline()` from `Anime.js` to achieve the effect with passing the `this.data.scores` and `this.data.bonus` from `props`. It's dynamic and not hardcode.
 
-	5.3 Animation of **ball shaking**
+	\5.3 Animation of **ball shaking**
 	I am not happy with this effect. If I have more time, I will come up with a more creative way. Again, this is dynamic too. The more bonus scores are, the more intense shaking will happen.
 
 6. Testing
 
 7. This README File.
-	7.1 I enjoyed to develop this out in a very limited timeframe. How to allocate time was the **biggest challenge** for me in this technical test. 
+	\7.1 I enjoyed to develop this out in a very limited timeframe. How to allocate time was the **biggest challenge** for me in this technical test. 
 
 ## Things I learnt
 1. Use `ref=` and `$refs` to target component when you want to play an animation. 
