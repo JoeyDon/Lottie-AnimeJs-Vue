@@ -9,18 +9,15 @@
 
   .text {
     color: #1d1d1b;
-    font-family: Muli;
     font-size: 14px;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 17px;
     padding-left: 10px;
   }
 
   .rewards {
     color: #1d1d1b;
-    font-family: "Pedigree-UltraBold";
     font-size: 12px;
-    font-weight: 400;
     letter-spacing: 1.5px;
 
     float: right;
@@ -30,7 +27,7 @@
     background-color: #e5e9f5;
     height: 1px;
     border: 0;
-    margin: 0;
+    margin: 2px;
     /*  default margin 8 */
   }
 }
@@ -38,24 +35,24 @@
 .lineSubtitle1 {
   height: 18px;
   color: #1d1d1b;
-  font-family: "Pedigree-UltraBold";
+  font-family: "Montserrat";
   font-size: 16px;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 18px;
   text-align: center;
   text-transform: uppercase;
   letter-spacing: 2px;
+  margin:30px 0
 }
 
 .lineSubtitle2 {
   height: 20px;
   color: #1d1d1b;
-  font-family: "Pedigree-UltraBold";
   font-size: 12px;
-  font-weight: 400;
   line-height: 20px;
   text-align: center;
   letter-spacing: 1.5px;
+  margin: 15px 0
 }
 
 .circleContainer {

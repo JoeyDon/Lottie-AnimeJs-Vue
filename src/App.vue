@@ -2,7 +2,11 @@
   <div id="app">
     <AnimiLogo />
     <Subtitle1 text="Lorem ipsum dolor" />
-    <RoundInfo v-for="(item,index) in dataSet1" :key="item.id" :data="dataSet1[index]" />
+    <RoundInfo
+      v-for="(item,index) in dataSet1"
+      :key="item.id"
+      :data="dataSet1[index]"
+    />
     <Subtitle1 text="Recent Activity" />
     <Subtitle2 text="16 July 2019" />
     <SingleLine
