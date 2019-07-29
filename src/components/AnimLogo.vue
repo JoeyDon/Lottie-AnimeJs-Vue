@@ -2,8 +2,10 @@
   <div class="svgContainer">
     <div ref="lottieContainer" />
     <div class="svgMask">
-      <svg viewBox="0 0 500 150"
-preserveAspectRatio="none">
+      <svg
+        viewBox="0 0 500 150"
+        preserveAspectRatio="none"
+      >
         <path
           d="M-12.41,105.09 C201.46,229.44 347.63,-91.28 522.01,141.61 L500.00,150.00 L0.00,150.00 Z"
           style="stroke: none; fill: #FFF;"
@@ -14,7 +16,7 @@ preserveAspectRatio="none">
 </template>
 
 <script>
-import animation from "../instruction/animation.json";
+import animation from "../dataAPI/animation.json";
 import lottie from "lottie-web";
 
 export default {

@@ -29,7 +29,7 @@ import RoundInfo from "./components/RoundInfo";
 import SingleLine from "./components/SingleLine";
 import Subtitle1 from "./components/Subtitle1";
 import Subtitle2 from "./components/Subtitle2";
-import dataFromAPI from "./data.json";
+import dataFromAPI from "./dataAPI/data.json";
 
 export default {
   data: function() {

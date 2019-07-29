@@ -74,7 +74,7 @@ export default {
     // shake
     const xMax = this.data.bonus;
     var bounceTransiton = [];
-    const bounceTimes = 20;
+    const bounceTimes = 30;
     for(var i =0; i<bounceTimes;i++){
       if( i != (bounceTimes-1)){
         bounceTransiton.push( i%2 === 0? {value: xMax / -4} :  {value: xMax / 4})
@@ -105,7 +105,7 @@ export default {
       targets: this.$refs.icon2x,
       easing: "linear",
       delay: 5200,
-      duration: 1500,
+      duration: 2200,
 
       translateX: bounceTransiton
     });
