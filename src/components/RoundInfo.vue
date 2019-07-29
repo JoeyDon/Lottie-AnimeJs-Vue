@@ -50,12 +50,16 @@ export default {
     };
   },
   mounted() {
+    /*
+      Animation 1: Scores goes up (+230).
+    */
+    // Create animation timeline of Anime.js
     var timeLine = anime.timeline({
       easing: "easeInOutExpo",
       duration: 1300
     });
-
     timeLine
+      // Stage 1 for base scores (yellow color)
       .add({
         targets: this.$refs.figure,
         innerHTML: [0, this.data.scores],
@@ -63,6 +67,7 @@ export default {
         delay: 1500,
         duration: 3000,
       })
+      // Stage 1 for bonus scores (pink color)
       .add({
         targets: this.$refs.figure,
         innerHTML: [this.data.scores, this.data.scores + this.data.bonus],
@@ -71,10 +76,15 @@ export default {
         duration: 3000,
       });
 
-    // shake
+    /*
+      Animation 2: Ball shaking dynamically based on bonus.
+    */
     const xMax = this.data.bonus;
     var bounceTransiton = [];
     const bounceTimes = 30;
+
+    // Define how many times it should bounce.
+    // Format {value: Number} is required by the Anime.js Library.
     for(var i =0; i<bounceTimes;i++){
       if( i != (bounceTimes-1)){
         bounceTransiton.push( i%2 === 0? {value: xMax / -4} :  {value: xMax / 4})
@@ -83,7 +93,7 @@ export default {
         bounceTransiton.push({value:0})
       }
     }
-      
+  
     anime({
       targets: this.$refs.icon2x,
       easing: "linear",
@@ -93,7 +103,11 @@ export default {
       translateX: bounceTransiton
     });
 
-    // Move the yellow base bar
+
+    /*
+      Animation 3: Fill the bar with yellow/pink
+    */
+    // Move the yellow base bar first
     setTimeout(() => {
       this.move("Initial");
     }, 1500);
@@ -104,6 +118,10 @@ export default {
     }, 5000);
   },
   methods: {
+    /*
+      Function for
+      Animation 3: Fill the bar with yellow/pink
+    */
     move(type) {
       if (type === "Initial") {
         var elem = this.$refs.progress;

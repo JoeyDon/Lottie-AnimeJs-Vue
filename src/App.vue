@@ -44,13 +44,14 @@ export default {
   },
   methods: {
     isLastElement(index, arrLength) {
+      /*
+        If it is the last element, the result will be: $divider:false
+        So, the <hr/> won't be rendered in the child component.
+      */
       return index !== arrLength - 1;
     }
   }
-  /*
-  todo:
-  1. computed date today yesterday
-  */
+
 };
 </script>
 

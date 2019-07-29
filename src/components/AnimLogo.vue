@@ -30,10 +30,11 @@ export default {
     };
   },
   mounted() {
+    // Get screen size
     this.screenWidth = window.screen.width;
     this.renderAnimationSVG();
 
-    // watch screen orientation
+    // Watch screen orientation
     window.onorientationchange = () => {
       // Destroy the old width instance
       this.animInstance.destroy();
