@@ -21,6 +21,11 @@ iphone5
 1em = 16px
 */
 @mixin respond($breakpoint) {
+  /*
+    Group 1: Tablets (Both portrait and landscape)
+    Width range : 768px - 1366px
+    Height range: Not being considered.
+  */
   @if $breakpoint == ipadProLandscape {
     // 1366px
     @media (max-width: 85.375em) {
@@ -39,6 +44,12 @@ iphone5
       @content;
     }
   }
+
+  /*
+    Group 2: Mobile Phones (portrait only)
+    Width range : 320px - 414px
+    Height range: Not being considered.
+  */
   @if $breakpoint == iphone678p {
     // 414px
     @media (max-width: 25.875em) {
@@ -57,9 +68,22 @@ iphone5
       @content;
     }
   }
+
   @if $breakpoint == iphone5 {
     // 320px
-    @media (max-width: 20em) {
+    @media (max-width: 20em)  {
+      @content;
+    }
+  }
+
+  /*
+    Group 3: Mobile Phones (landscape only)
+    Width range : >568px (Iphone 5 landscape width as the smallest among mobile phones)
+    Height range: <414px (Iphone6/7/8 Plus landscape height as the biggest among mobile phones)
+  */
+  @if $breakpoint == mobile-landscape {
+    // minwidth 568px, maxHeight 414px
+    @media (min-width: 35.5em) and (max-height:25.875em) {
       @content;
     }
   }

@@ -60,7 +60,8 @@ export default {
         rendererSettings: this.setViewBoxSize(this.screenWidth)
       });
     },
-    /*
+    
+    /* 
     For mobile phones: 
     rendererSettings: { viewBoxSize: "400 400 800 800" }
 
@@ -68,24 +69,53 @@ export default {
     rendererSettings: { viewBoxSize: "200 550 1200 1200" }
 
     IpadPro: 1024*1366
-    rendererSettings: { viewBoxSize: "200 550 1200 1200" }
+    rendererSettings: { viewBoxSize: "100 550 1400 1400" };
 
     IpadProLandscape: 1366*1024
-    rendererSettings: { viewBoxSize: "200 550 1200 1200" }
+    rendererSettings: { viewBoxSize: "-100 550 1800 1800" };
   */
     setViewBoxSize(width) {
       if (width < 768) {
-        return { viewBoxSize: "400 400 800 800" };
+        if(width>=568 && window.screen.height<=414){
+        /*
+          Group 3: Mobile Phones (landscape only)
+          Width range : >568px (Iphone 5 landscape width as the smallest among mobile phones)
+          Height range: <414px (Iphone6/7/8 Plus landscape height as the biggest among mobile phones)
+        */
+          return { viewBoxSize: "200 500 1200 1200"  };
+        }
+        else{
+          /*
+            Group 2: Mobile Phones (portrait only)
+            Width range : 320px - 414px
+            Height range: Not being considered.
+          */
+          return { viewBoxSize: "400 400 800 800" };
+        }
       }
       if (width >= 768 && width < 1024) {
+        /*
+          Group 1: Tablets
+          Ipad: 768*1024
+        */
         return { viewBoxSize: "200 550 1200 1200" };
       }
       if (width >= 1024 && width < 1366) {
+        /*
+          Group 1: Tablets
+          IpadPro: 1024*1366
+        */
         return { viewBoxSize: "100 550 1400 1400" };
       }
       if (width >= 1366) {
+        /*
+          Group 1: Tablets
+          IpadProLandscape: 1366*1024
+        */
         return { viewBoxSize: "-100 550 1800 1800" };
       }
+
+      
     }
   }
 };

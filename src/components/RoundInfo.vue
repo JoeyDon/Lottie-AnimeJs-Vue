@@ -83,24 +83,7 @@ export default {
         bounceTransiton.push({value:0})
       }
     }
-      // translateX: [
-      //   {
-      //     value: (xMax / 2) * -1
-      //   },
-      //   {
-      //     value: xMax / 2
-      //   },
-      //   {
-      //     value: xMax / -4
-      //   },
-      //   {
-      //     value: xMax / 4
-      //   },
-      //   {
-      //     value: 0
-      //   }
-      // ]
-
+      
     anime({
       targets: this.$refs.icon2x,
       easing: "linear",
@@ -123,7 +106,6 @@ export default {
   methods: {
     move(type) {
       if (type === "Initial") {
-        //var elem = document.getElementsByClassName("progress");
         var elem = this.$refs.progress;
         var width = 1;
         var runAnimation = setInterval(animation, 30);
@@ -131,7 +113,6 @@ export default {
         this.initialStoppedAt = stopAt;
       }
       if (type === "Bonus") {
-        //var elem = document.getElementsByClassName("progressBonus");
         var elem = this.$refs.progressBonus;
         var width = this.initialStoppedAt;
         var runAnimation = setInterval(animation, 100);

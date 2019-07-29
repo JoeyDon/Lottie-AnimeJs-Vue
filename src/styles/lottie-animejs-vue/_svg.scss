@@ -1,5 +1,8 @@
 .svgContainer {
   overflow: hidden;
+  @include respond(land) {
+    height: 100px;
+  }
   @include respond(ipadProLandscape) {
     height: 530px;
   }
@@ -8,6 +11,9 @@
   }
   @include respond(ipad) {
     height: 440px;
+  }
+  @include respond(mobile-landscape) {
+    height: 100vh;
   }
   @include respond(iphone678p) {
     height: 440px;
@@ -19,7 +25,7 @@
     height: 370px;
   }
   @include respond(iphone5) {
-    height: 330px;
+    height: 300px;
   }
 
   .svgMask {
@@ -34,6 +40,9 @@
     }
     @include respond(ipad) {
       top: 220px;
+    }
+    @include respond(mobile-landscape) {
+      top: 50vh;
     }
     @include respond(iphone678p) {
       top: 290px;
